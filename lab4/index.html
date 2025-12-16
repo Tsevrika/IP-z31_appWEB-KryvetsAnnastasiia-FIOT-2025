@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна №4</title>
+</head>
+<body>
+
+<h1>Лабораторна робота №4</h1>
+<h2>Завдання 1</h2>
+
+<script>
+let time = prompt("Введіть час у форматі год:хв (наприклад 10:30):");
+
+console.log(`Користувач ввів час: ${time}`);
+
+if (!time || !time.includes(":")) {
+  alert("Некоректний формат");
+} else {
+  let [hour, minute] = time.split(":").map(Number);
+
+  if (
+    isNaN(hour) ||
+    isNaN(minute) ||
+    hour < 0 ||
+    hour > 23 ||
+    minute < 0 ||
+    minute > 59
+  ) {
+    alert("Некоректні значення часу");
+    console.log(`Некоректні значення час`);
+
+  } else {
+    if (minute <= 15) {
+      alert("Перша чверть години");
+      console.log(`Перша чверть години`);
+    }
+    else if (minute <= 30) {
+      alert("Друга чверть години");
+      console.log(`Друга чверть години`);
+    }
+    else if (minute <= 45) 
+    {
+      alert("Третя чверть години");
+      console.log(`Третя чверть години`);
+    }
+    else 
+    {
+      alert("Четверта чверть години");
+      console.log(`Четверта чверть години`);
+    }
+  }
+}
+</script>
+
+<h2>Завдання 2</h2>
+<script>
+let number = prompt("Введіть число 1-4 для визначення пори року:");
+let result;
+console.log(`Користувач ввів: ${number}`);
+switch (number) {
+  case "1":
+    result = "зима";
+    break;
+  case "2":
+    result = "весна";
+    break;
+  case "3":
+    result = "літо";
+    break;
+  case "4":
+    result = "осінь";
+    break;
+  default:
+    result = "невірне значення";
+}
+
+console.log(`Пора року: ${result}`);
+alert(`Пора року: ${result}`);
+let day = prompt("Введіть число 1-7 для визначення дня тижня:");
+let finish;
+console.log(`Користувач ввів: ${day}`);
+switch (day) {
+  case "1": finish = "понеділок"; break;
+  case "2": finish = "вівторок"; break;
+  case "3": finish = "середа"; break;
+  case "4": finish = "четвер"; break;
+  case "5": finish = "п’ятниця"; break;
+  case "6": finish = "субота"; break;
+  case "7": finish = "неділя"; break;
+  default: finish = "невірне значення";
+}
+
+console.log(`День тижня: ${finish}`);
+alert(`День тижня: ${finish}`);
+</script>
+
+<h2>Завдання 3</h2>
+<script>
+const users = {
+  User1: "111",
+  User2: "222",
+  User3: "333"
+};
+
+let login = prompt("Введіть логін (User1/User2/User3):");
+while (!login) {
+  login = prompt("Поле не може бути пустим! Введіть логін:");
+}
+
+console.log(`Користувач ввів логін: ${login}`);
+
+if (users[login] !== undefined) {
+  let password = prompt("Введіть пароль:");
+  console.log(`Користувач ввів: ${password}`);
+
+  if (password === users[login]) {
+    alert(`Hello, ${login}`);
+    console.log(`Hello, ${login}`);
+  } else {
+    alert("I don't know you");
+    console.log(`I don't know you`);
+  }
+} else {
+  alert("I don't know you");
+  console.log(`I don't know you`);
+}
+
+</script>
+<h2>Завдання 4</h2>
+<script>
+function getShippingMessage(country, price, deliveryFee) {
+  const totalPrice = price + deliveryFee;
+  return `Shipping to ${country} will cost ${totalPrice} credits`;
+}
+
+let country = prompt("Завдання 4: Введіть країну доставки:");
+console.log(`Користувач ввів: ${country}`);
+let price = Number(prompt("Завдання 4: Введіть вартість товару:"));
+console.log(`Користувач ввів: ${price}`);
+let fee = Number(prompt("Завдання 4: Введіть вартість доставки:"));
+console.log(`Користувач ввів: ${fee}`);
+
+const msg1 = getShippingMessage(country, price, fee);
+console.log(msg1);
+alert(msg1);
+</script>
+
+<h2>Завдання 5</h2>
+<script>
+function makeTransactionWithCredits(quantity, pricePerDroid, customerCredits) {
+  const totalPrice = quantity * pricePerDroid;
+
+  if (totalPrice > customerCredits) {
+    return "Insufficient funds!";
+  }
+  return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+}
+
+let q = Number(prompt("Завдання 5 : Введіть кількість дроїдів:"));
+console.log(`Користувач ввів: ${q}`);
+let p = Number(prompt("Завдання 5 : Введіть ціну одного дроїда:"));
+console.log(`Користувач ввів: ${p}`);
+let credits = Number(prompt("Завдання 5 : Введіть кількість кредитів на рахунку:"));
+console.log(`Користувач ввів: ${credits}`);
+
+const msg2 = makeTransactionWithCredits(q, p, credits);
+console.log(msg2);
+alert(msg2);
+</script>
+
+
+<h2>Завдання 6</h2>
+<script>
+function makeArray(firstArray, secondArray, maxLength) {
+  const newArray = [...firstArray, ...secondArray];
+
+  if (newArray.length > maxLength) {
+    return newArray.slice(0, maxLength);
+  }
+
+  return newArray;
+}
+
+let firstInput = prompt("Завдання 6 : Введіть елементи першого масиву через кому:");
+console.log(`Користувач ввів: ${firstInput}`);
+let secondInput = prompt("Завдання 6 : Введіть елементи другого масиву через кому:");
+console.log(`Користувач ввів: ${secondInput}`);
+let maxLen = Number(prompt("Завдання 6 : Введіть максимальну довжину нового масиву:"));
+console.log(`Користувач ввів: ${maxLen}`);
+
+let firstArray = firstInput
+  .split(",")
+  .map(item => item.trim())
+  .filter(item => item !== "");
+
+let secondArray = secondInput
+  .split(",")
+  .map(item => item.trim())
+  .filter(item => item !== "");
+
+const merged = makeArray(firstArray, secondArray, maxLen);
+
+console.log("Перший масив:", firstArray);
+console.log("Другий масив:", secondArray);
+console.log("Новий масив:", merged);
+alert(`Новий масив: ${merged.join(", ")}`);
+</script>
+
+<h2>Завдання 7</h2>
+<script>
+function createArray(size) {
+  const arr = [];
+  for (let i = 0; i < size; i++) {
+    arr.push(Number(prompt(`Введіть елемент #${i + 1}:`)));
+  }
+  return arr;
+}
+
+function findMinCommonElement(arr1, arr2) {
+  const common = arr1.filter(x => arr2.includes(x));
+
+  if (common.length === 0) return null;
+
+  return Math.min(...common);
+}
+
+let n1 = Number(prompt("Введіть кількість елементів першого масиву:"));
+let n2 = Number(prompt("Введіть кількість елементів другого масиву:"));
+
+let array1 = createArray(n1);
+let array2 = createArray(n2);
+
+console.log("Перший масив:", array1);
+console.log("Другий масив:", array2);
+
+let minCommon = findMinCommonElement(array1, array2);
+
+if (minCommon === null) {
+  alert("Немає спільних елементів.");
+  console.log("Немає спільних елементів.");
+} else {
+  alert(`Найменший спільний елемент: ${minCommon}`);
+  console.log(`Найменший спільний елемент: ${minCommon}`);
+}
+
+function bubbleSort(arr) {
+  let sortedArr = [...arr];
+  let n = sortedArr.length;
+
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (sortedArr[j] > sortedArr[j + 1]) {
+        let temp = sortedArr[j];
+        sortedArr[j] = sortedArr[j + 1];
+        sortedArr[j + 1] = temp;
+      }
+    }
+  }
+  return sortedArr;
+}
+
+let sortedArray1 = bubbleSort(array1);
+let sortedArray2 = bubbleSort(array2);
+
+console.log("Перший масив ДО сортування:", array1);
+console.log("Перший масив ПІСЛЯ сортування:", sortedArray1);
+
+console.log("Другий масив ДО сортування:", array2);
+console.log("Другий масив ПІСЛЯ сортування:", sortedArray2);
+
+
+alert(
+  "Перший масив ДО сортування:\n" +
+  array1.join(", ") +
+  "\n\nПерший масив ПІСЛЯ сортування:\n" +
+  sortedArray1.join(", ")
+);
+alert(
+  "Другий масив ДО сортування:\n" +
+  array2.join(", ") +
+  "\n\nДругий масив ПІСЛЯ сортування:\n" +
+  sortedArray2.join(", ")
+);
+</script>
+
+<h2>Завдання 8</h2>
+<div id="output" style="font-size:18px; white-space:pre;"></div>
+
+<script>
+function create2DArray(rows, cols) {
+  const arr = [];
+  for (let i = 0; i < rows; i++) {
+    const row = [];
+    for (let j = 0; j < cols; j++) {
+      row.push(Math.floor(Math.random() * 101) - 50);
+    }
+    arr.push(row);
+  }
+  return arr;
+}
+
+let matrix = create2DArray(3, 4);
+
+console.table(matrix);
+
+let firstElement = matrix[0][0];
+let lastElement = matrix[matrix.length - 1][matrix[0].length - 1];
+
+console.log("Перший елемент:", firstElement);
+console.log("Останній елемент:", lastElement);
+
+matrix[0].splice(2, 0, 25);
+
+console.log("Масив після вставки:");
+console.table(matrix);2
+
+alert(
+  "Перший елемент: " + firstElement +
+  "\nОстанній елемент: " + lastElement
+);
+</script>
+
+<h2>Завдання 9</h2>
+
+<label>Введіть дату і час будильника:</label><br>
+<input type="datetime-local" id="alarmTime"><br><br>
+
+<button onclick="setAlarm()">Увімкнути будильник</button>
+<button onclick="clearAlarm()">Вимкнути будильник</button>
+
+<p id="status" style="font-size:18px; color:blue;"></p>
+
+<script>
+let alarmTime = null;
+let alarmActive = false;
+let timer = null;
+
+function setAlarm() {
+    let input = document.getElementById("alarmTime").value;
+
+    if (!input) {
+        alert("Введіть дату і час!");
+        return;
+    }
+
+    alarmTime = new Date(input);
+    alarmActive = true;
+
+    document.getElementById("status").textContent =
+        "Будильник встановлено на: " + alarmTime.toLocaleString();
+        console.log(`Будильник встановлено на: ${alarmTime.toLocaleString()}`);
+
+    if (timer) clearInterval(timer);
+
+    timer = setInterval(checkAlarm, 1000);
+}
+
+function checkAlarm() {
+    if (!alarmActive) return;
+
+    let now = new Date();
+
+    if (now >= alarmTime) {
+        alert("Будильник! Час настав!");
+        document.getElementById("status").textContent =
+            "Будильник спрацював: " + now.toLocaleString();
+            console.log(`Будильник спрацював: ${now.toLocaleString()}`);
+        clearAlarm();
+    }
+}
+
+function clearAlarm() {
+    alarmActive = false;
+    alarmTime = null;
+    document.getElementById("status").textContent = "Будильник вимкнено";
+    if (timer) clearInterval(timer);
+}
+</script>
+
+</body>
+</html>
