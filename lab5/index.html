@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна №5 – Парні варіанти</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .task { border: 1px solid #aaa; padding: 15px; margin: 15px 0; border-radius: 8px; }
+        button { padding: 6px 10px; margin-top: 10px; }
+        .output { margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>Лабораторна робота №5 (Парні варіанти)</h1>
+
+<div class="task">
+    <h2>Завдання 1 – Варіант 2: getProductDetails</h2>
+    <label>Введіть ID товару:</label>
+    <input type="number" id="prodId">
+    <button onclick="runTask2()">Запустити</button>
+    <div class="output" id="out2"></div>
+
+    <script>
+        const products = [
+            { id: 1, name: "Phone", price: 800 },
+            { id: 2, name: "Laptop", price: 1500 },
+            { id: 3, name: "Tablet", price: 600 }
+        ];
+
+        function getProductDetails(productId, success, error) {
+            const found = products.find(p => p.id == productId);
+            found ? success(found) : error("Товар не знайдено!");
+        }
+
+        function runTask2() {
+            const id = document.getElementById("prodId").value;
+            getProductDetails(
+                id,
+                prod => document.getElementById("out2").innerText = 
+                    `Знайдено: ${prod.name}, ${prod.price} грн`,
+                msg => document.getElementById("out2").innerText = msg
+            );
+        }
+    </script>
+</div>
+
+<div class="task">
+    <h2>Завдання 1 – Варіант 4: Concerts</h2>
+    <button onclick="runTask4()">Показати майбутні концерти</button>
+    <div class="output" id="out4"></div>
+
+    <script>
+        const concerts = {
+            Київ: new Date("2020-04-01"),
+            Умань: new Date("2025-07-02"),
+            Вінниця: new Date("2020-04-21"),
+            Одеса: new Date("2025-03-15"),
+            Хмельницький: new Date("2020-04-18"),
+            Харків: new Date("2025-07-10"),
+        };
+
+        function runTask4() {
+            const result = Object.entries(concerts)
+                .filter(([city, date]) => date > new Date())
+                .sort((a,b) => a[1] - b[1])
+                .map(([city]) => city);
+
+            document.getElementById("out4").innerText = result.join(", ");
+        }
+    </script>
+</div>
+
+<div class="task">
+    <h2>Завдання 1 – Варіант 6: Знижка 30% для медикаментів</h2>
+    <button onclick="runTask6()">Порахувати</button>
+    <div class="output" id="out6"></div>
+
+    <script>
+        const meds = [
+            { name: "Noshpa", price: 170 },
+            { name: "Analgin", price: 55 },
+            { name: "Quanil", price: 310 },
+            { name: "Alphacholine", price: 390 }
+        ];
+
+        function runTask6() {
+            const res = meds.map((m, i) => ({
+                id: i + 1,
+                name: m.name,
+                price: m.price > 300 ? m.price * 0.7 : m.price
+            }));
+
+            document.getElementById("out6").innerHTML =
+                res.map(item => `${item.id}) ${item.name} — ${item.price} грн`).join("<br>");
+
+        }
+    </script>
+</div>
+
+<div class="task">
+    <h2>Завдання 1 – Варіант 8: Storage</h2>
+
+    <input type="text" id="addItem" placeholder="Товар для додавання">
+    <button onclick="storageAdd()">Додати</button>
+
+    <input type="text" id="removeItem" placeholder="Товар для видалення">
+    <button onclick="storageRemove()">Видалити</button>
+
+    <button onclick="storageShow()">Показати всі товари</button>
+
+    <div class="output" id="out8"></div>
+
+    <script>
+        function Storage(items) {
+            this.items = items;
+
+            this.getItems = function () { return this.items; };
+            this.addItems = function (item) { this.items.push(item); };
+            this.removeItem = function (item) {
+                this.items = this.items.filter(x => x !== item);
+            };
+        }
+
+        const store = new Storage(["apple", "banana", "mango"]);
+
+        function storageAdd() {
+            store.addItems(document.getElementById("addItem").value);
+        }
+
+        function storageRemove() {
+            store.removeItem(document.getElementById("removeItem").value);
+        }
+
+        function storageShow() {
+            document.getElementById("out8").innerText = 
+                store.getItems().join(", ");
+        }
+    </script>
+</div>
+
+<div class="task">
+    <h2>Завдання 1 – Варіант 9: Кількість тегів</h2>
+    <button onclick="runTask9()">Порахувати</button>
+    <div class="output" id="out9"></div>
+
+    <script>
+        const tweets = [
+            { id: "000", likes: 5, tags: ["js", "nodejs"] },
+            { id: "001", likes: 2, tags: ["html", "css"] },
+            { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+            { id: "003", likes: 8, tags: ["css", "react"] },
+            { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+        ];
+
+        function runTask9() {
+            const res = tweets
+                .flatMap(t => t.tags)
+                .reduce((acc, tag) => {
+                    acc[tag] = (acc[tag] || 0) + 1;
+                    return acc;
+                }, {});
+
+            document.getElementById("out9").innerHTML =
+                Object.entries(res)
+                    .map(([tag, count]) => `${tag} — ${count} рази`)
+                    .join("<br>");
+
+        }
+    </script>
+</div>
+
+<div class="task">
+    <h2>Завдання 1 – Варіант 10: Перевірка дужок</h2>
+    <textarea id="codeInput" rows="3" cols="40" placeholder="Введіть JS-код"></textarea><br>
+    <button onclick="runTask10()">Перевірити</button>
+    <div class="output" id="out10"></div>
+
+    <script>
+        function checkBrackets(str) {
+            const stack = [];
+            const pairs = { ")": "(", "}": "{", "]": "[" };
+
+            for (const ch of str) {
+                if ("([{".includes(ch)) stack.push(ch);
+                else if (")}]".includes(ch)) {
+                    if (stack.pop() !== pairs[ch]) return false;
+                }
+            }
+            return stack.length === 0;
+        }
+
+        function runTask10() {
+            const code = document.getElementById("codeInput").value;
+            document.getElementById("out10").innerText =
+                checkBrackets(code) ? "Правильно ✔" : "Помилка ❌";
+        }
+    </script>
+</div>
+
+<div class="task">
+    <h2>Завдання 2 – Варіант 2: Чи є людина молодше 20</h2>
+
+    <button onclick="runT2V2()">Перевірити</button>
+
+    <div class="output" id="t2v2"></div>
+
+    <script>
+        function runT2V2() {
+            const people = [
+                { name: 'John', age: 27 },
+                { name: 'Jane', age: 31 },
+                { name: 'Bob', age: 19 }
+            ];
+
+            const hasYoung = people.some(p => p.age < 20);
+
+            document.getElementById("t2v2").innerText =
+                hasYoung ? "Так — знайдено людину молодше 20 років." :
+                           "Ні — усі старші за 20.";
+        }
+    </script>
+</div>
+
+<div class="task">
+    <h2>Завдання 2 – Варіант 4: Квадрати чисел</h2>
+
+    <button onclick="runT2V4()">Порахувати</button>
+
+    <div class="output" id="t2v4"></div>
+
+    <script>
+        function runT2V4() {
+            const numbers = [1, 2, 3, 4, 5];
+
+            const squares = numbers.map(n => n * n);
+
+            document.getElementById("t2v4").innerText =
+                "Квадрати: " + squares.join(", ");
+        }
+    </script>
+</div>
+
+<div class="task">
+    <h2>Завдання 2 – Варіант 6: Сортування об’єктів за віком</h2>
+    <button onclick="sortUsers()">Відсортувати</button>
+
+    <div id="output" style="margin-top:10px; font-size:16px;"></div>
+
+    <script>
+        function sortUsers() {
+            const users = [
+                { name: 'John', age: 27 },
+                { name: 'Jane', age: 31 },
+                { name: 'Bob', age: 19 },
+            ];
+
+            const sortedUsers = users.sort((a, b) => a.age - b.age);
+
+            document.getElementById("output").innerText =
+                sortedUsers
+                    .map(u => `${u.name} — ${u.age} років`)
+                    .join("\n");
+        }
+    </script>
+
+</div>
+<div class="task">
+    <h2>Завдання 2 – Варіант 7: Calculator (method chaining)</h2>
+
+    <button onclick="runCalculator()">Запустити приклад</button>
+
+    <div class="output" id="calcOutput"></div>
+
+    <script>
+        class Calculator {
+            constructor() {
+                this.value = 0;
+            }
+
+            number(value) {
+                this.value = value;
+                return this; 
+            }
+
+            add(value) {
+                this.value += value;
+                return this;
+            }
+
+            subtract(value) {
+                this.value -= value;
+                return this;
+            }
+
+            multiply(value) {
+                this.value *= value;
+                return this;
+            }
+
+            divide(value) {
+                if (value === 0) {
+                    throw new Error("Ділити на 0 не можна!");
+                }
+                this.value /= value;
+                return this;
+            }
+
+            getResult() {
+                return this.value;
+            }
+        }
+
+        function runCalculator() {
+            const calc = new Calculator();
+
+            const result = calc
+                .number(10)
+                .add(5)
+                .subtract(3)
+                .multiply(4)
+                .divide(2)
+                .getResult();
+
+            document.getElementById("calcOutput").innerText =
+                "Результат: " + result;
+        }
+    </script>
+</div>
+
+</body>
+</html>
