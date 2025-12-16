@@ -1,0 +1,21 @@
+<h2>Фіксована блокова верстка на float (варіант 9)</h2>
+
+<style>
+.box { border: 1px solid #333; }
+.head { background: #0077ff; height: 60px; text-align: center; }
+.side { background: #f7c400; width: 150px; float: left; height: 340px; text-align: center;}
+.topblock { background: #f7c400; height: 60px; text-align: center; }
+.main { background: white; height: 280px; text-align: center; }
+.footer { clear: both; background: #0077ff; height: 60px; text-align: center;}
+</style>
+
+<div class="box head">1 — Header</div>
+
+<div class="box side">2 — Sidebar</div>
+
+<div style="margin-left:150px;">
+    <div class="box topblock">5 — Top Block</div>
+    <div class="box main">4 — Main Content</div>
+</div>
+
+<div class="box footer">3 — Footer</div>
