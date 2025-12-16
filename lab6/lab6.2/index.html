@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Лабораторна робота №6</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Лабораторна робота №6</h1>
+  </header>
+
+  <main>
+    <section class="task">
+      <h3>Варіант 2. Обмін вмістом двох інпутів</h3>
+      <p>
+        Створити розмітку: текст, кнопка, два інпута. При натисканні кнопки
+        <strong>"SWAP ME"</strong> відбувається обмін вмістом між інпутами.
+      </p>
+
+      <div class="task-content">
+        <label>
+          Перше значення:
+          <input id="task2-input1" type="text" value="Hello" />
+        </label>
+        <label>
+          Друге значення:
+          <input id="task2-input2" type="text" value="World" />
+        </label>
+        <button id="task2-swap-btn" type="button">SWAP ME</button>
+      </div>
+    </section>
+
+    <section class="task">
+      <h3>Варіант 4. Зменшити / збільшити квадрат</h3>
+      <p>
+        Кнопка <strong>"Зменшити"</strong> робить квадрат менше на 15px, а
+        <strong>"Збільшити"</strong> — більше на 15px.
+      </p>
+
+      <div class="task-content">
+        <div id="task4-square"></div>
+        <div class="buttons-row">
+          <button id="task4-decrease-btn" type="button">Зменшити</button>
+          <button id="task4-increase-btn" type="button">Збільшити</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="task">
+      <h3>Варіант 6. Подвоєння значень у списку</h3>
+      <p>
+        Натиснувши кнопку <strong>"Подвоїти"</strong>, збільшити значення
+        кожного елемента списку у 2 рази. Повторне натискання знову подвоює.
+      </p>
+
+      <div class="task-content">
+        <ul id="task6-list">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+        <button id="task6-double-btn" type="button">Подвоїти</button>
+      </div>
+    </section>
+
+    <section class="task">
+      <h3>Варіант 7. Підрахунок категорій у списку</h3>
+      <p>
+        Написати скрипт, який рахує кількість категорій в
+        <code>ul#categories</code>, а також для кожного
+        <code>li.item</code> виводить у консоль текст заголовку (h2) та
+        кількість елементів (li) в категорії. Використати
+        <code>forEach()</code> і навігацію по DOM.
+      </p>
+
+      <div class="task-content">
+        <ul id="categories">
+          <li class="item">
+            <h2>Animals</h2>
+            <ul>
+              <li>Cat</li>
+              <li>Hamster</li>
+              <li>Horse</li>
+              <li>Parrot</li>
+            </ul>
+          </li>
+          <li class="item">
+            <h2>Products</h2>
+            <ul>
+              <li>Bread</li>
+              <li>Parsley</li>
+              <li>Cheese</li>
+            </ul>
+          </li>
+          <li class="item">
+            <h2>Technologies</h2>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Node.js</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          Результат роботи скрипта дивись у консолі браузера
+          (<kbd>F12</kbd> → <em>Console</em>).
+        </p>
+      </div>
+    </section>
+
+    <section class="task">
+      <h3>Варіант 8. Форма логіна</h3>
+      <p>
+        Обробка відправлення форми за подією <code>submit</code> без
+        перезавантаження сторінки. Якщо є порожні поля — показати
+        <code>alert</code>. Якщо все заповнено — зібрати значення в об'єкт,
+        вивести в консоль і очистити форму.
+      </p>
+
+      <div class="task-content">
+        <form class="login-form" id="task8-login-form">
+          <label>
+            Email
+            <input type="email" name="email" />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" />
+          </label>
+          <button type="submit">Log in</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="task">
+      <h3>Варіант 9. Зміна кольору фону</h3>
+      <p>
+        Скрипт змінює колір фону <code>&lt;body&gt;</code> по кліку на кнопку
+        і записує значення кольору в <code>span.color</code>.
+      </p>
+
+      <div class="task-content">
+        <div class="widget" id="task9-widget">
+          <p>Background color: <span class="color">-</span></p>
+          <button type="button" class="change-color">Change color</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="task">
+      <h3>Варіант 10. Створення та очищення колекції елементів</h3>
+      <p>
+        Ввести кількість елементів (1–100). Кнопка
+        <strong>Create</strong> створює колекцію
+        <code>&lt;div&gt;</code> зростаючого розміру (починаючи з
+        30×30px, кожен наступний +10px). Кнопка
+        <strong>Destroy</strong> очищає колекцію.
+      </p>
+
+      <div class="task-content">
+        <div id="controls">
+          <input
+            id="task10-input"
+            type="number"
+            min="1"
+            max="100"
+            step="1"
+            placeholder="Введіть число від 1 до 100"
+          />
+          <button type="button" data-create id="task10-create-btn">
+            Create
+          </button>
+          <button type="button" data-destroy id="task10-destroy-btn">
+            Destroy
+          </button>
+        </div>
+
+        <div id="boxes"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function getRandomHexColor() {
+      return `#${Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0")}`;
+    }
+
+    (function () {
+      const input1 = document.getElementById("task2-input1");
+      const input2 = document.getElementById("task2-input2");
+      const swapBtn = document.getElementById("task2-swap-btn");
+
+      swapBtn.addEventListener("click", () => {
+        const temp = input1.value;
+        input1.value = input2.value;
+        input2.value = temp;
+      });
+    })();
+
+    (function () {
+      const square = document.getElementById("task4-square");
+      const decreaseBtn = document.getElementById("task4-decrease-btn");
+      const increaseBtn = document.getElementById("task4-increase-btn");
+
+      let size = 100;
+      square.style.width = size + "px";
+      square.style.height = size + "px";
+
+      decreaseBtn.addEventListener("click", () => {
+        size -= 15;
+        if (size < 15) size = 15;
+        square.style.width = size + "px";
+        square.style.height = size + "px";
+      });
+
+      increaseBtn.addEventListener("click", () => {
+        size += 15;
+        square.style.width = size + "px";
+        square.style.height = size + "px";
+      });
+    })();
+
+    (function () {
+      const listItems = document.querySelectorAll("#task6-list li");
+      const doubleBtn = document.getElementById("task6-double-btn");
+
+      doubleBtn.addEventListener("click", () => {
+        listItems.forEach((li) => {
+          const currentValue = Number(li.textContent);
+          if (!isNaN(currentValue)) {
+            li.textContent = currentValue * 2;
+          }
+        });
+      });
+    })();
+
+    (function () {
+      const categoriesList = document.getElementById("categories");
+      const items = categoriesList.querySelectorAll(".item");
+
+      console.log("Number of categories:", items.length);
+
+      items.forEach((item) => {
+        const title = item.querySelector("h2").textContent;
+        const elementsCount = item.querySelectorAll("ul li").length;
+
+        console.log(`Category: ${title}`);
+        console.log(`Elements: ${elementsCount}`);
+      });
+    })();
+
+    (function () {
+      const form = document.getElementById("task8-login-form");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const { email, password } = event.currentTarget.elements;
+        const emailValue = email.value.trim();
+        const passwordValue = password.value.trim();
+
+        if (!emailValue || !passwordValue) {
+          alert("All form fields must be filled in");
+          return;
+        }
+
+        const formData = {
+          email: emailValue,
+          password: passwordValue,
+        };
+
+        console.log("Login form data:", formData);
+        form.reset();
+      });
+    })();
+
+    (function () {
+      const widget = document.getElementById("task9-widget");
+      const colorSpan = widget.querySelector(".color");
+      const changeColorBtn = widget.querySelector(".change-color");
+
+      changeColorBtn.addEventListener("click", () => {
+        const color = getRandomHexColor();
+        document.body.style.backgroundColor = color;
+        colorSpan.textContent = color;
+      });
+    })();
+
+    (function () {
+      const input = document.getElementById("task10-input");
+      const createBtn = document.getElementById("task10-create-btn");
+      const destroyBtn = document.getElementById("task10-destroy-btn");
+      const boxes = document.getElementById("boxes");
+
+      function createBoxes(amount) {
+        boxes.innerHTML = "";
+        const fragment = document.createDocumentFragment();
+        let size = 30;
+
+        for (let i = 0; i < amount; i++) {
+          const box = document.createElement("div");
+          box.classList.add("box");
+          box.style.width = size + "px";
+          box.style.height = size + "px";
+          box.style.backgroundColor = getRandomHexColor();
+          fragment.appendChild(box);
+          size += 10;
+        }
+
+        boxes.appendChild(fragment);
+      }
+
+      function destroyBoxes() {
+        boxes.innerHTML = "";
+      }
+
+      createBtn.addEventListener("click", () => {
+        const value = Number(input.value);
+        if (value < 1 || value > 100 || isNaN(value)) {
+          alert("Введіть число від 1 до 100");
+          return;
+        }
+        createBoxes(value);
+        input.value = "";
+      });
+
+      destroyBtn.addEventListener("click", () => {
+        destroyBoxes();
+      });
+    })();
+  </script>
+</body>
+</html>
