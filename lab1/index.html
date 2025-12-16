@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e5e5e5;
+        }
+
+        .top-header {
+            background-color: #d3d3d3;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #ffffff;
+        }
+
+        .top-header .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .top-header .menu a {
+            margin-left: 20px;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+            padding: 0;
+        }
+
+        .top-block {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-section {
+            background-color: #b39a74;
+            flex: 1;
+            padding: 30px 40px;
+            color: white;
+        }
+
+        .form-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-row label {
+            width: 30%;
+            font-size: 18px;
+        }
+
+        .form-row input {
+            width: 60%;
+            padding: 6px 10px;
+            height: 28px;
+            border: none;
+            border-radius: 3px;
+        }
+
+
+        .form-section button {
+            background-color: #2ecc71;
+            padding: 6px 18px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .image-section {
+            background-color: #b39a74;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+            padding: 40px;
+        }
+
+        .table-block {
+            background-color: #b39a74;
+            padding: 20px 40px;
+            margin-top: 40px;
+        }
+
+        .list-title {
+            color: white;
+            font-size: 26px;
+            text-align: center;
+            margin: 0;
+            padding-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-top: 3px solid #e0d2b8;
+            background-color: transparent;
+        }
+
+        th {
+            color: white;
+            font-size: 20px;
+            padding: 15px;
+            border: 2px solid #e0d2b8;
+            border-top: none;
+        }
+
+        td {
+            padding: 18px;
+            color: white;
+            font-size: 18px;
+            border: 2px solid #e0d2b8; 
+        }
+
+        table th:nth-child(1),
+        table td:nth-child(1) { width: 10%; }
+
+        table th:nth-child(2),
+        table td:nth-child(2) { width: 40%; }
+
+        table th:nth-child(3),
+        table td:nth-child(3) { width: 15%; }
+
+        table th:nth-child(4),
+        table td:nth-child(4) { width: 35%; }
+
+        .desc-link {
+            display: block;
+            margin-top: 20px;
+            color: #3b00c2;
+            font-size: 16px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 15px;
+            background-color: #d3d3d3;
+            border-top: 3px solid #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="top-header">
+    <div class="logo">Shopping List App</div>
+
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="description.html">About</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="top-block">
+
+    <div class="form-section">
+        <h3>Додати товар</h3>
+
+        <div class="form-row">
+            <label>Назва товару</label>
+            <input type="text" placeholder="Наприклад: Молоко">
+        </div>
+
+        <div class="form-row">
+            <label>Кількість</label>
+            <input type="number" placeholder="Наприклад: 1">
+        </div>
+
+        <button>Додати</button>
+    </div>
+
+            <div class="image-section">
+                <img src="images.jpg" alt="Shopping Image" style="width:70%; height:auto;">
+            </div>
+        </div>
+
+    <div class="table-block">
+
+        <h2 class="list-title">Ваш список покупок</h2>
+
+        <table>
+            <tr>
+                <th>№</th>
+                <th>Назва</th>
+                <th>К-сть</th>
+                <th>Статус</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Молоко</td>
+                <td>1</td>
+                <td>Не куплено</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Хліб</td>
+                <td>1</td>
+                <td>Куплено</td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+<footer>© 2025 Shopping List App</footer>
+
+</body>
+</html>
