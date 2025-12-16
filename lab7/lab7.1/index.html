@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="top-header">
+    <div class="logo">Shopping List App</div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
+
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="description.html">About</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="top-block">
+
+        <div class="form-section">
+            <h3>Додати товар</h3>
+
+            <div class="form-row">
+                <label>Назва товару</label>
+                <input id="product-name" type="text" placeholder="Наприклад: Молоко">
+            </div>
+
+            <div class="form-row">
+                <label>Кількість</label>
+                <input id="product-qty" type="number" min="1" placeholder="Наприклад: 1">
+            </div>
+
+            <button id="add-btn">Додати</button>
+        </div>
+
+        <div class="image-section">
+            <img src="images.jpg" alt="Shopping Image" class="main-image">
+        </div>
+
+    </section>
+
+    <section class="table-block">
+        <h2 class="list-title">Ваш список покупок</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Назва</th>
+                <th>К-сть</th>
+                <th>Статус</th>
+            </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+
+        <div id="pagination" class="pagination"></div>
+
+    </section>
+
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+
+        <h2 id="modal-title"></h2>
+        <p><strong>Кількість:</strong> <span id="modal-qty"></span></p>
+        <p><strong>Статус:</strong> <span id="modal-status"></span></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+<footer>© 2025 Shopping List App</footer>
+
+</body>
+</html>
