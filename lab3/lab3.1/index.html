@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="top-header">
+    <div class="logo">Shopping List App</div>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+    </label>
+
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="description.html">About</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section class="top-block">
+
+        <div class="form-section">
+            <h3>Додати товар</h3>
+
+            <div class="form-row">
+                <label>Назва товару</label>
+                <input type="text" placeholder="Наприклад: Молоко">
+            </div>
+
+            <div class="form-row">
+                <label>Кількість</label>
+                <input type="number" placeholder="Наприклад: 1">
+            </div>
+
+            <button>Додати</button>
+        </div>
+
+        <div class="image-section">
+            <img src="images.jpg" alt="Shopping Image" class="main-image">
+        </div>
+
+    </section>
+
+    <section class="table-block">
+        <h2 class="list-title">Ваш список покупок</h2>
+
+        <table>
+            <tr>
+                <th>№</th>
+                <th>Назва</th>
+                <th>К-сть</th>
+                <th>Статус</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Молоко</td>
+                <td>1</td>
+                <td>Не куплено</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Хліб</td>
+                <td>1</td>
+                <td>Куплено</td>
+            </tr>
+        </table>
+
+    </section>
+
+</div>
+
+<footer>© 2025 Shopping List App</footer>
+
+</body>
+</html>
