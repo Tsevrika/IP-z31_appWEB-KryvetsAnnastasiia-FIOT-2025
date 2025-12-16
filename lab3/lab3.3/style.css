@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background: #000;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 18px 60px;
+    margin: 0;
+}
+
+.menu li {
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.city {
+    background: #333;
+    padding: 6px 18px;
+    border-radius: 4px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 60px;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.hero-sub {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.blue {
+    color: #2994ff;
+}
+
+.hero-box {
+    font-size: 58px;
+    font-weight: 800;
+    border: 3px solid #2994ff;
+    padding: 35px 45px;
+    line-height: 1.1;
+    text-align: right;
+}
+
+.partners {
+    background: #eaf0f7;
+    padding: 50px 60px;
+}
+
+.partners-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.orange {
+    color: #ff7e00;
+}
+
+.partners-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.employer-card {
+    background: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.employer-photo {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.employer-btn {
+    margin-top: 10px;
+    background: #ffe49b;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.logo-list {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center;
+}
+
+.logo-list img {
+    width: 140px;
+    opacity: 0.85;
+}
+
+.courses {
+    background: #0d0d0d;
+    color: white;
+    padding: 60px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.card {
+    background: #1a1a1a;
+    width: 30%;
+    padding: 30px;
+    border-radius: 14px;
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    top: -18px;
+    left: 20px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: #000;
+    font-weight: bold;
+}
+
+.left {
+    color: #37a8ff;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.footer {
+    background: black;
+    color: white;
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+}
+.partners-description {
+    max-width: 900px;
+    margin: 0 auto 35px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+}
+
+@media (max-width: 1023px) {
+
+    .menu {
+        padding: 18px 30px;
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 50px 30px;
+        gap: 40px;
+    }
+
+    .hero-title {
+        font-size: 26px;
+    }
+
+    .hero-box {
+        font-size: 46px;
+        padding: 30px;
+    }
+
+    .partners {
+        padding: 40px 30px;
+    }
+
+    .partners-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .logo-list {
+        width: 100%;
+    }
+
+    .courses {
+        padding: 40px 30px;
+    }
+
+    .cards {
+        gap: 25px;
+    }
+
+    .card {
+        width: 32%;
+    }
+
+    .footer {
+        padding: 20px 30px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 15px 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 35px 20px;
+        text-align: center;
+    }
+
+    .hero-box {
+        text-align: center;
+        font-size: 36px;
+        padding: 25px;
+        margin-top: 25px;
+    }
+
+    .hero-title {
+        font-size: 22px;
+    }
+
+    .partners {
+        padding: 30px 20px;
+    }
+
+    .partners-description {
+        font-size: 14px;
+    }
+
+    .employer-card {
+        width: 100%;
+    }
+
+    .logo-list img {
+        width: 110px;
+    }
+
+    .courses {
+        padding: 35px 20px;
+    }
+
+    .cards {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+}
