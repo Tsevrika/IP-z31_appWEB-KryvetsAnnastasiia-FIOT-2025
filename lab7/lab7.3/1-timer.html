@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown Timer</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .timer {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      align-items: center;
+    }
+
+    .value {
+      font-size: 36px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Таймер зворотного відліку</h1>
+
+  <input type="text" id="datetime-picker" />
+
+  <button type="button" data-start disabled>Start</button>
+
+  <div class="timer">
+    <div class="field">
+      <span class="value" data-days>00</span>
+      <span class="label">Days</span>
+    </div>
+    <div class="field">
+      <span class="value" data-hours>00</span>
+      <span class="label">Hours</span>
+    </div>
+    <div class="field">
+      <span class="value" data-minutes>00</span>
+      <span class="label">Minutes</span>
+    </div>
+    <div class="field">
+      <span class="value" data-seconds>00</span>
+      <span class="label">Seconds</span>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+
+  <script src="1-timer.js"></script>
+
+</body>
+</html>
